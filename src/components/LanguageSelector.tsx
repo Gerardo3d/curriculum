@@ -21,8 +21,8 @@ export const LanguageSelector = () => {
         value={context.language}
         onChange={(e) => context.changeLanguage(e.target.value)}
       >
-        <option value="en">{context.t.translate("languages.en")}</option>
-        <option value="es">{context.t.translate("languages.es")}</option>
+        <option value="en">{context.t.translate("languages_config.en")}</option>
+        <option value="es">{context.t.translate("languages_config.es")}</option>
       </select>
     </label>
   );

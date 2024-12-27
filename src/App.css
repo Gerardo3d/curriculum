@@ -1,3 +1,12 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --blue1: rgba(22,106,184,255);
+  --blue2: rgba(23,106,184,255);
+  --gray1: rgba(225,225,225,255);
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +45,35 @@
     transform: rotate(360deg);
   }
 }
+
+.id h1{
+  font-size: 3rem;
+  text-align: center;
+  color: var(--blue1);
+}
+.id h2{
+  text-align: center;
+  font-size: 3rem;
+}
+.title{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.title h2{
+  text-align: justify;
+  color: var(--blue2);
+  font-size: 2.4rem;
+  margin: 0.5rem 0;
+}
+
+.title__Line{
+  width: 100%;
+  background-color: var(--gray1);
+  height: 0.3rem;
+}
+
+p{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
