@@ -81,11 +81,11 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-.section-primary .row{
+.section-primary.row{
   vertical-align: middle;
   display: table-row;
 }
-.section-primary .cell{
+.section-primary.cell{
   vertical-align: middle;
   display: table-cell;
 }
@@ -147,6 +147,10 @@
   font-size: 1.2rem;
 }
 
+.justify {
+  text-align: justify;
+}
+
 div.pointer {
   cursor: pointer;
   font-size: 20px;
@@ -160,4 +164,20 @@ footer{
   color: #fff;
   padding: 40px 10px 30px;
   text-align: center;
+}
+
+@media (max-width: 550px){
+  .id h1{
+    font-size: 40px;
+    text-align: center;
+  }
+  .id h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .id h3{
+    text-align: center;
+    font-size: 25px;
+    color: #3C96DC;
+  }
 }
