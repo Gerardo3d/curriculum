@@ -1,6 +1,5 @@
 import React from "react";
 import IconFa from "./IconFa";
-import { Button, Stack } from "react-bootstrap";
 
 type IconLinkProps = {
   name?: string;
@@ -22,12 +21,9 @@ const IconLink: React.FC<IconLinkProps> = ({
   };
 
   return (
-    <Button variant="light" onClick={() => openInNewTab()}>
-      <Stack direction="horizontal">
-        <IconFa name={icon} color={color} size={size} />
-        <div className="p-2">{name}</div>
-      </Stack>
-    </Button>
+    <div className="pointer" onClick={() => openInNewTab()}>
+      <IconFa name={icon} color={color} size={size} title={name} />
+    </div>
   );
 };
 
