@@ -81,11 +81,11 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-.section-primary.row{
+.row2{
   vertical-align: middle;
   display: table-row;
 }
-.section-primary.cell{
+.cell2{
   vertical-align: middle;
   display: table-cell;
 }

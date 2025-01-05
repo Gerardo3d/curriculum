@@ -17,7 +17,7 @@ export default function App() {
     );
   }
 
-  const openInNewTab = (url:string) => {
+  const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noreferrer");
   };
 
@@ -38,7 +38,7 @@ export default function App() {
             <Stack className="profile mx-auto" gap={3} direction="horizontal">
               <IconLink
                 name={"Gmail"}
-                url={"mailto:"+extra.email}
+                url={"mailto:" + extra.email}
                 icon={"FaInbox"}
                 color={"#fff"}
                 size="3.5em"
@@ -58,47 +58,51 @@ export default function App() {
         </div>
 
         {/* Seccion de metas */}
-        <div className="section-primary col-md-7 mx-auto">
-          <div className="row">
-            <Title titulo={context.t.translate("titles.goals")} />
-            <p>  
-              {context.t.translate("goals")}
-            </p>
-          </div>
-          <div className="row">
-            {/* Seccion de lenguajes de programacion*/}
-            <Title titulo={context.t.translate("titles.skills")} />
-            <Stack gap={3}>
-              <div className="text">{context.t.translate("skills").join(", ")}</div>
-              <div className="text">{extra.languages ? extra.languages.join(", ") : ""}</div>
-              <div className="text">{extra.tools ? extra.tools.join(", ") : ""}</div>
-            </Stack>
-
-          </div>
-          <div className="row">
-            {/* Seccion de idiomas */}
-            <Title titulo={context.t.translate("titles.languages")} />
-            <Stack direction="horizontal">
-              {context.t.translate("languages").map((x: any, i: any) => (
-                <Stack className="p-2" key={i}>
-                  <div className="text">{x.lang}</div>
-                  <div className="text">{x.level}</div>
-                </Stack>
-              ))}
-            </Stack>
+        <div className="section-primary col-md-6 mx-auto">
+          <div className="intro">
+            <div className="row2">
+              <Title titulo={context.t.translate("titles.goals")} />
+              <p>{context.t.translate("goals")}</p>
+            </div>
+            <div className="row2">
+              {/* Seccion de lenguajes de programacion*/}
+              <Title titulo={context.t.translate("titles.skills")} />
+              <Stack gap={3}>
+                <div className="text">
+                  {context.t.translate("skills").join(", ")}
+                </div>
+                <div className="text">
+                  {extra.languages ? extra.languages.join(", ") : ""}
+                </div>
+                <div className="text">
+                  {extra.tools ? extra.tools.join(", ") : ""}
+                </div>
+              </Stack>
+            </div>
+            <div className="row2">
+              {/* Seccion de idiomas */}
+              <Title titulo={context.t.translate("titles.languages")} />
+              <Stack direction="horizontal">
+                {context.t.translate("languages").map((x: any, i: any) => (
+                  <Stack className="p-2" key={i}>
+                    <div className="text"><b>{x.lang}</b></div>
+                    <div className="text">{x.level}</div>
+                  </Stack>
+                ))}
+              </Stack>
+            </div>
           </div>
         </div>
 
-
         <div className="section-image">
           <div className="img-overlay"></div>
-          <div className="col-md-7 mx-auto">
+          <div className="col-md-6 mx-auto">
             {/* Seccion de experiencia profesional */}
-            <div className="row">
+            <div className="row2">
               <Title titulo={context.t.translate("titles.experience")} />
               {context.t.translate("experience").map((x: any, i: any) => (
                 <Stack className="p-2" key={i}>
-                  <div className="text">{x.company}</div>
+                  <div className="text"><b>{x.company}</b></div>
                   <div className="text">{x.title}</div>
                   <div className="text">{x.date}</div>
                   <div className="text justify">{x.description}</div>
@@ -107,7 +111,7 @@ export default function App() {
             </div>
 
             {/* Seccion de educacion */}
-            <div className="row">
+            <div className="row2">
               <Title titulo={context.t.translate("titles.education")} />
               {context.t.translate("education").map((x: any, i: any) => (
                 <Stack className="p-2" key={i}>
@@ -122,7 +126,7 @@ export default function App() {
             </div>
 
             {/* Seccion de certificaciones */}
-            <div className="row">
+            <div className="row2">
               <Title titulo={context.t.translate("titles.certifications")} />
               {context.t.translate("certifications").map((x: any, i: any) => (
                 <Stack className="p-2" key={i}>
@@ -137,41 +141,52 @@ export default function App() {
           </div>
         </div>
 
-        <div className="section-primary col-md-7 mx-auto">
-          <div className="row">
-            {/* Seccion de proyectos */}
-            <Title titulo={context.t.translate("titles.proyects")} />
-            <Stack>
-              {context.t.translate("proyects").map((x: any, i: any) => (
-                <Stack className="p-2" key={i}>
-                  <div className="text"><b>{x.name}</b></div>
-                  <div className="text">{x.date}</div>
-                  <div className="text justify">{x.description}</div>
-                  <div className="text">{x.skills}</div>
-                </Stack>
-              ))}
-            </Stack>
-          </div>
-          <div className="row">
-            {/* Seccion de cursos */}
-            <Title titulo={context.t.translate("titles.courses")} />
-            <Container>
-              <Row>
-                {context.t.translate("courses").map((x: any, i: any) => (
-                  <Col xs={6} md={4} className="p-2" key={i}>
-                    <div className="text"><b>{x.name}</b></div>
-                    <div className="text">{x.company}</div>
+        <div className="section-primary col-md-6 mx-auto">
+          <div className="intro">
+            <div className="row2">
+              {/* Seccion de proyectos */}
+              <Title titulo={context.t.translate("titles.proyects")} />
+              <Stack>
+                {context.t.translate("proyects").map((x: any, i: any) => (
+                  <Stack className="p-2" key={i}>
+                    <div className="text">
+                      <b>{x.name}</b>
+                    </div>
                     <div className="text">{x.date}</div>
-                    {x.url?
-                      <IconLink name={x.url} url={x.url} icon="FaExternalLinkAlt" color="black" size="1em"/>
-                    :null}
-                  </Col>
+                    <div className="text justify">{x.description}</div>
+                    <div className="text">{x.skills}</div>
+                  </Stack>
                 ))}
-              </Row>
-            </Container>
+              </Stack>
+            </div>
+            <div className="row2">
+              {/* Seccion de cursos */}
+              <Title titulo={context.t.translate("titles.courses")} />
+              <Container>
+                <Row>
+                  {context.t.translate("courses").map((x: any, i: any) => (
+                    <Col xs={6} md={4} className="p-2" key={i}>
+                      <div className="text">
+                        <b>{x.name}</b>
+                      </div>
+                      <div className="text">{x.company}</div>
+                      <div className="text">{x.date}</div>
+                      {x.url ? (
+                        <IconLink
+                          name={x.url}
+                          url={x.url}
+                          icon="FaExternalLinkAlt"
+                          color="black"
+                          size="1em"
+                        />
+                      ) : null}
+                    </Col>
+                  ))}
+                </Row>
+              </Container>
+            </div>
           </div>
         </div>
-        
       </main>
       <footer>
         Copyright 2024 - José Gerardo López Arroyo - All Rights Reserved
